@@ -1,0 +1,129 @@
+/*
+ * BSD 3-Clause License
+ *
+ * Copyright (c) 2021, Joint Research Centre (JRC) All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions are met:
+ *
+ * 1. Redistributions of source code must retain the above copyright notice, this
+ *    list of conditions and the following disclaimer.
+ *
+ * 2. Redistributions in binary form must reproduce the above copyright notice,
+ *    this list of conditions and the following disclaimer in the documentation
+ *    and/or other materials provided with the distribution.
+ *
+ * 3. Neither the name of the copyright holder nor the names of its
+ *    contributors may be used to endorse or promote products derived from
+ *    this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+ * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+ * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
+ */
+
+/**
+ * Shades of Purple Theme — for Highlightjs.
+ *
+ * @author (c) Ahmad Awais <https://twitter.com/mrahmadawais/>
+ * @link GitHub Repo → https://github.com/ahmadawais/Shades-of-Purple-HighlightJS
+ * @version 1.5.0
+ */
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  /* Custom font is optional */
+  /* font-family: 'Operator Mono', 'Fira Code', 'Menlo', 'Monaco', 'Courier New', 'monospace';  */
+  line-height: 1.45;
+  padding: 2rem;
+  background: #2d2b57;
+  font-weight: normal;
+}
+
+.hljs-title {
+  color: #fad000;
+  font-weight: normal;
+}
+
+.hljs-name {
+  color: #a1feff;
+}
+
+.hljs-tag {
+  color: #ffffff;
+}
+
+.hljs-attr {
+  color: #f8d000;
+  font-style: italic;
+}
+
+.hljs-built_in,
+.hljs-selector-tag,
+.hljs-section {
+  color: #fb9e00;
+}
+
+.hljs-keyword {
+  color: #fb9e00;
+}
+
+.hljs,
+.hljs-subst {
+  color: #e3dfff;
+}
+
+.hljs-string,
+.hljs-attribute,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition,
+.hljs-code,
+.hljs-regexp,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-template-tag,
+.hljs-quote,
+.hljs-deletion {
+  color: #4cd213;
+}
+
+.hljs-meta,
+.hljs-meta-string {
+  color: #fb9e00;
+}
+
+.hljs-comment {
+  color: #ac65ff;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-literal,
+.hljs-name,
+.hljs-strong {
+  font-weight: normal;
+}
+
+.hljs-literal,
+.hljs-number {
+  color: #fa658d;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}

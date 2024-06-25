@@ -1,0 +1,134 @@
+/*
+ * BSD 3-Clause License
+ *
+ * Copyright (c) 2021, Joint Research Centre (JRC) All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions are met:
+ *
+ * 1. Redistributions of source code must retain the above copyright notice, this
+ *    list of conditions and the following disclaimer.
+ *
+ * 2. Redistributions in binary form must reproduce the above copyright notice,
+ *    this list of conditions and the following disclaimer in the documentation
+ *    and/or other materials provided with the distribution.
+ *
+ * 3. Neither the name of the copyright holder nor the names of its
+ *    contributors may be used to endorse or promote products derived from
+ *    this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+ * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+ * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
+ */
+
+/*
+
+vim-hybrid theme by w0ng (https://github.com/w0ng/vim-hybrid)
+
+*/
+
+/*background color*/
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #1d1f21;
+}
+
+/*selection color*/
+.hljs::selection,
+.hljs span::selection {
+  background: #373b41;
+}
+
+.hljs::-moz-selection,
+.hljs span::-moz-selection {
+  background: #373b41;
+}
+
+/*foreground color*/
+.hljs {
+  color: #c5c8c6;
+}
+
+/*color: fg_yellow*/
+.hljs-title,
+.hljs-name {
+  color: #f0c674;
+}
+
+/*color: fg_comment*/
+.hljs-comment,
+.hljs-meta,
+.hljs-meta .hljs-keyword {
+  color: #707880;
+}
+
+/*color: fg_red*/
+.hljs-number,
+.hljs-symbol,
+.hljs-literal,
+.hljs-deletion,
+.hljs-link {
+ color: #cc6666
+}
+
+/*color: fg_green*/
+.hljs-string,
+.hljs-doctag,
+.hljs-addition,
+.hljs-regexp,
+.hljs-selector-attr,
+.hljs-selector-pseudo {
+  color: #b5bd68;
+}
+
+/*color: fg_purple*/
+.hljs-attribute,
+.hljs-code,
+.hljs-selector-id {
+ color: #b294bb;
+}
+
+/*color: fg_blue*/
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-bullet,
+.hljs-tag {
+ color: #81a2be;
+}
+
+/*color: fg_aqua*/
+.hljs-subst,
+.hljs-variable,
+.hljs-template-tag,
+.hljs-template-variable {
+  color: #8abeb7;
+}
+
+/*color: fg_orange*/
+.hljs-type,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-quote,
+.hljs-section,
+.hljs-selector-class {
+  color: #de935f;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}

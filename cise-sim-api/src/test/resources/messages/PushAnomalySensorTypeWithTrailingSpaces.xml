@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ BSD 3-Clause License
+  ~
+  ~ Copyright (c) 2021, Joint Research Centre (JRC) All rights reserved.
+  ~
+  ~ Redistribution and use in source and binary forms, with or without
+  ~ modification, are permitted provided that the following conditions are met:
+  ~
+  ~ 1. Redistributions of source code must retain the above copyright notice, this
+  ~    list of conditions and the following disclaimer.
+  ~
+  ~ 2. Redistributions in binary form must reproduce the above copyright notice,
+  ~    this list of conditions and the following disclaimer in the documentation
+  ~    and/or other materials provided with the distribution.
+  ~
+  ~ 3. Neither the name of the copyright holder nor the names of its
+  ~    contributors may be used to endorse or promote products derived from
+  ~    this software without specific prior written permission.
+  ~
+  ~ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  ~ AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  ~ IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+  ~ DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+  ~ FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+  ~ DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+  ~ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+  ~ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+  ~ OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  ~ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  ~
+  -->
+
+<ns4:Push xmlns:ns4="http://www.cise.eu/servicemodel/v1/message/">
+    <CorrelationID>476d949d-5aa4-44cc-8e20-c1a2288fe098</CorrelationID>
+    <CreationDateTime>2018-01-18T13:45:29.590+01:00</CreationDateTime>
+    <MessageID>2657a510-5469-429f-ad00-7c96daa7c7a2</MessageID>
+    <Priority>Low</Priority>
+    <Sender>
+        <SeaBasin>Atlantic</SeaBasin>
+        <ServiceID>it.nodeit.cisesimweb1.anomaly.push.provider</ServiceID>
+        <ServiceOperation>Push</ServiceOperation>
+        <ServiceRole>Provider</ServiceRole>
+        <ServiceStatus>Online</ServiceStatus>
+        <ServiceType>AnomalyService</ServiceType>
+    </Sender>
+    <Payload xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns4:XmlEntityPayload">
+        <InformationSecurityLevel>NonClassified</InformationSecurityLevel>
+        <InformationSensitivity>Green</InformationSensitivity>
+        <IsPersonalData>false</IsPersonalData>
+        <Purpose>NonSpecified</Purpose>
+        <EnsureEncryption>false</EnsureEncryption>
+        <Anomaly xmlns:ns2="http://www.cise.eu/servicemodel/v1/authority/" xmlns:ns4="http://www.cise.eu/servicemodel/v1/message/" xmlns:ns3="http://www.cise.eu/servicemodel/v1/service/">
+
+            <Identifier>
+
+                <UUID>LocationAnomalyDocument_001</UUID>
+
+            </Identifier>
+
+            <Metadata>
+
+                <CreationDate>2022-01-26T16:01:35.749Z</CreationDate>
+
+                <PublicationDate>2022-01-26T16:01:35.753Z</PublicationDate>
+
+            </Metadata>
+
+            <OccurrencePeriod>
+
+                <EndDate>2021-06-02Z</EndDate>
+
+                <EndTime>11:35:42.000Z</EndTime>
+
+                <StartDate>2021-04-02Z</StartDate>
+
+                <StartTime>11:35:42.000Z</StartTime>
+
+            </OccurrencePeriod>
+
+            <LocationRel>
+
+                <Location>
+
+                    <Geometry>
+
+                        <Latitude>36.423852</Latitude>
+
+                        <Longitude>-3.815808</Longitude>
+
+                    </Geometry>
+
+                    <Geometry>
+
+                        <Latitude>36.350150</Latitude>
+
+                        <Longitude>-2.835718</Longitude>
+
+                    </Geometry>
+
+                    <Geometry>
+
+                        <Latitude>35.942057</Latitude>
+
+                        <Longitude>-2.863184</Longitude>
+
+                    </Geometry>
+
+                    <Geometry>
+
+                        <Latitude>36.082768</Latitude>
+
+                        <Longitude>-4.708456</Longitude>
+
+                    </Geometry>
+
+                    <Geometry>
+
+                        <Latitude>36.423852</Latitude>
+
+                        <Longitude>-3.815808</Longitude>
+
+                    </Geometry>
+
+                </Location>
+
+            </LocationRel>
+
+            <InvolvedObjectRel>
+
+                <Object xsi:type="ns6:Vessel" xmlns:ns6="http://www.cise.eu/datamodel/v1/entity/vessel/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+                    <Name>VesselName</Name>
+
+                    <LocationRel>
+
+                        <Location>
+
+                            <Geometry>
+
+                                <Latitude>36.423852</Latitude>
+
+                                <Longitude>-3.815808</Longitude>
+
+                            </Geometry>
+
+                            <Geometry>
+
+                                <Latitude>36.350150</Latitude>
+
+                                <Longitude>-2.835718</Longitude>
+
+                            </Geometry>
+
+                            <Geometry>
+
+                                <Latitude>35.942057</Latitude>
+
+                                <Longitude>-2.863184</Longitude>
+
+                            </Geometry>
+
+                            <Geometry>
+
+                                <Latitude>36.082768</Latitude>
+
+                                <Longitude>-4.708456</Longitude>
+
+                            </Geometry>
+
+                            <Geometry>
+
+                                <Latitude>36.423852</Latitude>
+
+                                <Longitude>-3.815808</Longitude>
+
+                            </Geometry>
+
+                        </Location>
+
+                        <SensorType>AcousticSystems </SensorType>
+
+                    </LocationRel>
+
+                    <Nationality>IT</Nationality>
+
+                    <CallSign>Call sign</CallSign>
+
+                    <IMONumber>112345</IMONumber>
+
+                    <IRNumber>3275</IRNumber>
+
+                    <MMSI>876543</MMSI>
+
+                    <ShipConfiguration>SingleHullTanker</ShipConfiguration>
+
+                </Object>
+
+            </InvolvedObjectRel>
+
+        </Anomaly>
+    </Payload>
+    <DiscoveryProfiles>
+        <Community>MaritimeSafetySecurity</Community>
+        <ServiceOperation>Push</ServiceOperation>
+        <ServiceRole>Consumer</ServiceRole>
+        <ServiceType>AnomalyService</ServiceType>
+        <ServiceStatus>Online</ServiceStatus>
+    </DiscoveryProfiles>
+</ns4:Push>

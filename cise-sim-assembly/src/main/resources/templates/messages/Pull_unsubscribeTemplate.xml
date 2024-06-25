@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ BSD 3-Clause License
+  ~
+  ~ Copyright (c) 2021, Joint Research Centre (JRC) All rights reserved.
+  ~
+  ~ Redistribution and use in source and binary forms, with or without
+  ~ modification, are permitted provided that the following conditions are met:
+  ~
+  ~ 1. Redistributions of source code must retain the above copyright notice, this
+  ~    list of conditions and the following disclaimer.
+  ~
+  ~ 2. Redistributions in binary form must reproduce the above copyright notice,
+  ~    this list of conditions and the following disclaimer in the documentation
+  ~    and/or other materials provided with the distribution.
+  ~
+  ~ 3. Neither the name of the copyright holder nor the names of its
+  ~    contributors may be used to endorse or promote products derived from
+  ~    this software without specific prior written permission.
+  ~
+  ~ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  ~ AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  ~ IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+  ~ DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+  ~ FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+  ~ DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+  ~ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+  ~ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+  ~ OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  ~ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  ~
+  -->
+
+<ns4:PullRequest xmlns:ns4="http://www.cise.eu/servicemodel/v1/message/">
+	<ContextID>ContextId-111</ContextID>
+	<CorrelationID>60eeb924-4e5e-4925-9eba-decf28c89c61</CorrelationID>
+	<CreationDateTime>2018-01-18T13:33:46.887+01:00</CreationDateTime>
+	<MessageID>60eeb924-4e5e-4925-9eba-decf28c89c61</MessageID>
+	<Priority>High</Priority>
+	<RequiresAck>false</RequiresAck>
+	<Sender>
+		<SeaBasin>NorthSea</SeaBasin>
+		<ServiceID>de.sim2-node01.vessel.subscribe.consumer</ServiceID>
+		<ServiceOperation>Subscribe</ServiceOperation>
+		<ServiceRole>Consumer</ServiceRole>
+		<ServiceStatus>Online</ServiceStatus>
+		<ServiceType>VesselService</ServiceType>
+	</Sender>
+	<Recipient>
+		<SeaBasin>NorthSea</SeaBasin>
+		<ServiceID>de.sim1-node01.vessel.subscribe.provider</ServiceID>
+		<ServiceOperation>Subscribe</ServiceOperation>
+		<ServiceRole>Provider</ServiceRole>
+		<ServiceStatus>Online</ServiceStatus>
+		<ServiceType>VesselService</ServiceType>
+	</Recipient>
+	<PullType>Unsubscribe</PullType>
+	<ResponseTimeOut>1000</ResponseTimeOut>
+</ns4:PullRequest>

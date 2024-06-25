@@ -1,0 +1,16 @@
+version: '3'
+services:
+  cise-sim:
+    image: ec-jrc/cise-sim:latest
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
+
+    volumes:
+      - ./conf:/srv/cise-simulator/conf
+      - ./logs:/srv/cise-simulator/logs
+      - ./msghistory:/srv/cise-simulator/msghistory
+      - ./templates:/srv/cise-simulator/templates
+    ports:
+      - 8200:8200
+      - 8201:8201
+

@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ BSD 3-Clause License
+  ~
+  ~ Copyright (C) 2021 European Union
+  ~
+  ~ Redistribution and use in source and binary forms, with or without
+  ~ modification, are permitted if the following conditions are met:
+  ~
+  ~ 1. Redistributions of source code must retain the above copyright notice, this
+  ~    list of conditions and the following disclaimer.
+  ~
+  ~ 2. Redistributions in binary form must reproduce the above copyright notice,
+  ~    this list of conditions and the following disclaimer in the documentation
+  ~    and/or other materials provided with the distribution.
+  ~
+  ~ 3. Neither the name of the copyright holder nor the names of its
+  ~    contributors may be used to endorse or promote products derived from
+  ~    this software without specific prior written permission.
+  ~
+  ~ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  ~ AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  ~ IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+  ~ DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+  ~ FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+  ~ DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+  ~ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+  ~ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+  ~ OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  ~ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  ~
+  -->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <artifactId>cise-sim</artifactId>
+        <groupId>eu.europa.ec.jrc.marex</groupId>
+        <version>1.4.5</version>
+    </parent>
+
+    <artifactId>cise-sim-assembly</artifactId>
+
+    <packaging>pom</packaging>
+
+    <profiles>
+        <profile>
+            <id>default</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <build>
+                <resources>
+                    <resource>
+                        <directory>src/main/resources/docker</directory>
+                        <filtering>true</filtering>
+                    </resource>
+                </resources>
+
+                <plugins>
+
+                    <plugin>
+                        <artifactId>maven-antrun-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <phase>prepare-package</phase>
+                                <configuration>
+                                    <tasks>
+                                        <replace token="cise-sim-assembly/src/main/resources/" value=""
+                                                 dir="../cise-sim-api/target/classes">
+                                            <include name="sim.properties"/>
+                                        </replace>
+                                    </tasks>
+                                </configuration>
+                                <goals>
+                                    <goal>run</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-assembly-plugin</artifactId>
+                        <executions>
+
+                            <!-- cise-sim -->
+                            <execution>
+                                <id>emulator-docker-files</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>single</goal>
+                                </goals>
+                                <configuration>
+                                    <finalName>cise-sim-${project.version}-bin</finalName>
+                                    <appendAssemblyId>false</appendAssemblyId>
+                                    <outputDirectory>../target/</outputDirectory>
+                                    <descriptors>
+                                        <descriptor>src/main/assemblies/bin.xml</descriptor>
+                                    </descriptors>
+                                </configuration>
+                            </execution>
+
+                            <!-- cise sim src -->
+                            <execution>
+                                <id>emulator-src</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>single</goal>
+                                </goals>
+                                <configuration>
+                                    <finalName>cise-sim-${project.version}-src</finalName>
+                                    <appendAssemblyId>false</appendAssemblyId>
+                                    <outputDirectory>../target/</outputDirectory>
+                                    <descriptors>
+                                        <descriptor>src/main/assemblies/src.xml</descriptor>
+                                    </descriptors>
+                                </configuration>
+                            </execution>
+
+                            <!-- cise-sim cli -->
+                            <execution>
+                                <id>emulator-cli</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>single</goal>
+                                </goals>
+                                <configuration>
+                                    <finalName>cise-sim-${project.version}-cli</finalName>
+                                    <appendAssemblyId>false</appendAssemblyId>
+                                    <outputDirectory>../target/</outputDirectory>
+                                    <descriptors>
+                                        <descriptor>src/main/assemblies/cli.xml</descriptor>
+                                    </descriptors>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-deploy-plugin</artifactId>
+                        <configuration>
+                            <skip>true</skip>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>distribution-package</id>
+            <build>
+                <resources>
+                    <resource>
+                        <directory>src/main/resources/docker</directory>
+                        <filtering>true</filtering>
+                    </resource>
+                </resources>
+
+                <plugins>
+
+                    <plugin>
+                        <artifactId>maven-antrun-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <phase>prepare-package</phase>
+                                <configuration>
+                                    <tasks>
+                                        <replace token="cise-sim-assembly/src/main/resources/" value=""
+                                                 dir="../cise-sim-api/target/classes">
+                                            <include name="sim.properties"/>
+                                        </replace>
+                                    </tasks>
+                                </configuration>
+                                <goals>
+                                    <goal>run</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                    <!-- Docker Build Image -->
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>exec-maven-plugin</artifactId>
+                        <version>1.4.0</version>
+                        <executions>
+
+                            <!-- Move the Dockerfile to the target directory -->
+                            <execution>
+                                <id>copy-dockerfile</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>exec</goal>
+                                </goals>
+                                <configuration>
+                                    <executable>cp</executable>
+                                    <workingDirectory>${project.basedir}</workingDirectory>
+                                    <arguments>
+                                        <argument>src/main/docker/Dockerfile</argument>
+                                        <argument>../target/.</argument>
+                                    </arguments>
+                                </configuration>
+                            </execution>
+
+                            <!-- Create the docker image -->
+                            <execution>
+                                <id>docker-image</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>exec</goal>
+                                </goals>
+                                <configuration>
+                                    <executable>docker</executable>
+                                    <workingDirectory>../target/</workingDirectory>
+                                    <arguments>
+                                        <argument>build</argument>
+                                        <argument>.</argument>
+                                        <argument>-t</argument>
+                                        <argument>ec-jrc/cise-sim:${project.version}</argument>
+                                        <argument>--build-arg</argument>
+                                        <argument>VERSION=${project.version}</argument>
+                                    </arguments>
+                                </configuration>
+                            </execution>
+
+                            <!-- Extract the docker image to tar -->
+                            <execution>
+                                <id>extract-docker-image</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>exec</goal>
+                                </goals>
+                                <configuration>
+                                    <executable>docker</executable>
+                                    <workingDirectory>../target/</workingDirectory>
+                                    <arguments>
+                                        <argument>save</argument>
+                                        <argument>ec-jrc/cise-sim:${project.version}</argument>
+                                        <argument>-o</argument>
+                                        <argument>docker_cisesim_${project.version}.tar</argument>
+                                    </arguments>
+                                </configuration>
+                            </execution>
+
+                            <execution>
+                                <id>gzip-docker-image</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>exec</goal>
+                                </goals>
+                                <configuration>
+                                    <executable>gzip</executable>
+                                    <workingDirectory>../target/</workingDirectory>
+                                    <arguments>
+                                        <argument>-f</argument>
+                                        <argument>docker_cisesim_${project.version}.tar</argument>
+                                    </arguments>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-assembly-plugin</artifactId>
+                        <executions>
+
+                            <!-- cise-sim -->
+                            <execution>
+                                <id>emulator-docker-files</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>single</goal>
+                                </goals>
+                                <configuration>
+                                    <finalName>cise-sim-${project.version}-bin</finalName>
+                                    <appendAssemblyId>false</appendAssemblyId>
+                                    <outputDirectory>../target/</outputDirectory>
+                                    <descriptors>
+                                        <descriptor>src/main/assemblies/bin.xml</descriptor>
+                                    </descriptors>
+                                </configuration>
+                            </execution>
+
+                            <!-- cise sim src -->
+                            <execution>
+                                <id>emulator-src</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>single</goal>
+                                </goals>
+                                <configuration>
+                                    <finalName>cise-sim-${project.version}-src</finalName>
+                                    <appendAssemblyId>false</appendAssemblyId>
+                                    <outputDirectory>../target/</outputDirectory>
+                                    <descriptors>
+                                        <descriptor>src/main/assemblies/src.xml</descriptor>
+                                    </descriptors>
+                                </configuration>
+                            </execution>
+
+                            <!-- cise-sim cli -->
+                            <execution>
+                                <id>emulator-cli</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>single</goal>
+                                </goals>
+                                <configuration>
+                                    <finalName>cise-sim-${project.version}-cli</finalName>
+                                    <appendAssemblyId>false</appendAssemblyId>
+                                    <outputDirectory>../target/</outputDirectory>
+                                    <descriptors>
+                                        <descriptor>src/main/assemblies/cli.xml</descriptor>
+                                    </descriptors>
+                                </configuration>
+                            </execution>
+
+                            <!-- cise-sim deploy-->
+                            <execution>
+                                <id>emulator-bin</id>
+                                <phase>deploy</phase>
+                                <goals>
+                                    <goal>single</goal>
+                                </goals>
+                                <configuration>
+                                    <finalName>cise-sim-${project.version}</finalName>
+                                    <appendAssemblyId>false</appendAssemblyId>
+                                    <outputDirectory>../target/</outputDirectory>
+                                    <descriptors>
+                                        <descriptor>src/main/assemblies/deploy.xml</descriptor>
+                                    </descriptors>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-deploy-plugin</artifactId>
+                        <configuration>
+                            <skip>true</skip>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
+
+    <dependencies>
+        <dependency>
+            <artifactId>cise-sim-dropw</artifactId>
+            <groupId>eu.europa.ec.jrc.marex</groupId>
+            <version>${parent.version}</version>
+        </dependency>
+    </dependencies>
+
+    <properties>
+        <main.basedir>${project.basedir}/..</main.basedir>
+    </properties>
+</project>
