@@ -1,8 +1,12 @@
-# CISE Sim
+# ART (Applied Research Technology) CISE Sim
 
-[![security status](https://www.meterian.com/badge/pb/5fa62dc3-4eea-4652-8b35-47753ad61b0d/security)](https://www.meterian.com/projects/?id=5fa62dc3-4eea-4652-8b35-47753ad61b0d)
-[![stability status](https://www.meterian.com/badge/pb/5fa62dc3-4eea-4652-8b35-47753ad61b0d/stability)](https://www.meterian.com/projects/?id=5fa62dc3-4eea-4652-8b35-47753ad61b0d)
-[![licensing status](https://www.meterian.com/badge/pb/5fa62dc3-4eea-4652-8b35-47753ad61b0d/licensing)](https://www.meterian.com/projects/?id=5fa62dc3-4eea-4652-8b35-47753ad61b0d)
+ART CISE Sim is a open source simulator for sending and receiving CISE messages to/from Open CISE Sims based on https://code.europa.eu/jrc-cise/cise-sim.
+
+--------------------------------------------------------------------------------
+
+Everthing under this is imported from https://code.europa.eu/jrc-cise/cise-sim.
+
+--------------------------------------------------------------------------------
 
 **CISE Sim** is an application capable of sending and receiving CISE messages to/from CISE Nodes, adaptors or other CISE Sims. The CISE Sim is conformant to the CISE Service model.
 
