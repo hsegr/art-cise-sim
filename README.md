@@ -4,7 +4,7 @@ ART CISE Sim is a open source simulator for sending and receiving CISE messages 
 
 --------------------------------------------------------------------------------
 
-Everthing under this is imported from https://code.europa.eu/jrc-cise/cise-sim.
+Everthing under this is imported from https://code.europa.eu/jrc-cise/cise-sim and is applicablr in that repository.
 
 --------------------------------------------------------------------------------
 
